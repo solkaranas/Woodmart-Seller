@@ -124,9 +124,7 @@ class ProductScreen extends StatelessWidget {
                                                                 msg: "Added");
                                                           }
                                                           break;
-                                                        case 1:
-                                                          break;
-                                                        case 2:
+                                                       case 1:
                                                           controller
                                                               .removeProduct(
                                                                   data[index]
