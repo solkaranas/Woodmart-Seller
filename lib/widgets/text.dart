@@ -7,3 +7,4 @@ Widget normalText({text, size = 14.0, color = Colors.black}) {
 Widget boldText({text, color = Colors.black, size = 14.0}) {
   return "$text".text.color(color).size(size).fontWeight(FontWeight.bold).make();
 }
+

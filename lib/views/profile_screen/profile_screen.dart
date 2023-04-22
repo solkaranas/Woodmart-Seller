@@ -33,18 +33,23 @@ class ProfileScreen extends StatelessWidget {
                 ),
               );
             } else {
-              // print(">>>>>>>>>>>> ${snapshot.data!.docs.length}");
               if (snapshot.data!.docs.isNotEmpty) {
                 controller.snapshotData = snapshot.data!.docs.first;
                 return Column(
                   children: [
                     ListTile(
-                      leading: Image.asset(icApp)
-                          .box
-                          .roundedFull
-                          .clip(Clip.antiAlias)
-                          .make(),
-                      title: boldText(text: "Vendor", size: 16.0),
+                      leading: controller.snapshotData['imageUrl'] == ''
+                          ? Image.asset(
+                              icStar,
+                              width: 100,
+                              fit: BoxFit.cover,
+                            ).box.roundedFull.clip(Clip.antiAlias).make()
+                          : Image.network(
+                              controller.snapshotData['imageUrl'],
+                              width: 100,
+                              // fit: BoxFit.cover,
+                            ).box.roundedFull.clip(Clip.antiAlias).make(),
+                      title: boldText(text: "${controller.snapshotData['vendor_name']}", size: 16.0),
                       subtitle: //normalText(text: "ez")
                           normalText(
                               text: "${controller.snapshotData['email']}",

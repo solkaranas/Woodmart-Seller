@@ -34,3 +34,12 @@ const nameHint = "eg. Vendor Name",
     website = "Shop Website",
     name = "UserName",
     address = "Shop Address";
+
+    const sofa = "Sofa";
+const chair = "Chair";
+const table = "Table";
+const kitchen = "Kitchen";
+const lamp = "Lamp";
+const cupboard = "Cupboard";
+const vase = "Vase";
+const others = "Others";
