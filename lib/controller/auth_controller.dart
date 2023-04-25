@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:wood_mart_seller/const/consts.dart';
 
-class AuthController extends GetxController{
-    var isLoading = false.obs;
+class AuthController extends GetxController {
+  var isLoading = false.obs;
 //text controllers
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
@@ -13,15 +13,14 @@ class AuthController extends GetxController{
     UserCredential? userCredential;
 
     try {
-     userCredential = await auth.signInWithEmailAndPassword(
+      userCredential = await auth.signInWithEmailAndPassword(
           email: emailController.text, password: passwordController.text);
+      currentVendor = userCredential.user;
     } on FirebaseAuthException catch (e) {
       VxToast.show(context, msg: e.toString());
     }
     return userCredential;
   }
-
-
 
   //signout method
 
@@ -32,5 +31,4 @@ class AuthController extends GetxController{
       VxToast.show(context, msg: e.toString());
     }
   }
-
 }

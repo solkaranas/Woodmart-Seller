@@ -185,7 +185,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                               children: [
                                 boldText(text: "Total Amount", color: black),
                                 boldText(
-                                    text: "\$${widget.data['total_amount']}",
+                                    text: "₹${widget.data['total_amount']}",
                                     color: red,
                                     size: 16.0),
                                 //  "Total Amount".text.fontFamily(semibold).make(),

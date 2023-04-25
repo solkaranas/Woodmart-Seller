@@ -46,12 +46,14 @@ class ProductDetails extends StatelessWidget {
                 children: [
                   boldText(text: "${data['p_name']}", size: 16.0),
                   10.heightBox,
-                  boldText(text: "${data['p_category']}", color: fontGrey, size: 16.0),
+                  boldText(
+                      text: "${data['p_category']}",
+                      color: fontGrey,
+                      size: 16.0),
                   10.heightBox,
                   VxRating(
                     isSelectable: false,
-                     value: double.parse(data['p_rating']),
-                    
+                    value: double.parse(data['p_rating']),
                     onRatingUpdate: (value) {},
                     normalColor: textFieldGrey,
                     selectionColor: golden,
@@ -60,7 +62,8 @@ class ProductDetails extends StatelessWidget {
                     size: 25,
                   ),
                   10.heightBox,
-                  boldText(text: "\$${data['p_price']}", color: black, size: 18.0),
+                  boldText(
+                      text: "₹${data['p_price']}", color: black, size: 18.0),
                   const Divider(),
                   10.heightBox,
                   description.text
@@ -91,8 +94,7 @@ class ProductDetails extends StatelessWidget {
                           .size(40, 40)
                           .roundedFull
                           .color(
-Color(data['p_colors'][index]).withOpacity(1.0)
-                              )
+                              Color(data['p_colors'][index]).withOpacity(1.0))
                           .margin(const EdgeInsets.symmetric(horizontal: 4))
                           .make()
                           .onTap(() {}),
@@ -108,7 +110,10 @@ Color(data['p_colors'][index]).withOpacity(1.0)
                           .color(Colors.black)
                           .make(),
                       15.widthBox,
-                      normalText(text: "${data['p_quantity']} items", color: fontGrey, size: 18.0)
+                      normalText(
+                          text: "${data['p_quantity']} items",
+                          color: fontGrey,
+                          size: 18.0)
                     ],
                   ),
                   10.heightBox,
