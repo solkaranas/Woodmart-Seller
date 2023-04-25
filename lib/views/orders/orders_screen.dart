@@ -69,7 +69,7 @@ class OrdersScreen extends StatelessWidget {
                                   color: fontGrey,
                                 ),
                                 10.widthBox,
-                                boldText(text: unpaid, color: red)
+                                boldText(text: data[index]['shipping_method']== "COD"? unpaid:"Paid", color: data[index]['shipping_method']== "COD"? red:green)
                               ],
                             )
                           ],

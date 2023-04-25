@@ -152,10 +152,12 @@ class _OrderDetailsState extends State<OrderDetails> {
                         title1: "Order Date",
                         title2: "Payment Method"),
                     orderPlaceDetails(
-                        d1: "Unpaid",
+                        d1: widget.data['shipping_method']=="COD"?"Unpaid":"Paid",
                         d2: "Order Placed",
                         title1: "Payment Status",
-                        title2: "Delivery Status"),
+                        title2: "Delivery Status",
+                        color:  widget.data['shipping_method']=="COD"?red:green
+                        ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 16.0, vertical: 8),
